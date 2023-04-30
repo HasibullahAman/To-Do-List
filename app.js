@@ -24,11 +24,18 @@ app.get('/', (req, res) => {
         NewItems: items,
     });
 });
+app.get('/about', (req, res) => {
+    req.render('about');
+});
 app.post('/', (req, res) => {
     let item = req.body.newItem;
-    items.push(item);
-
-    res.redirect('/')
+    if (req.body.list === "Work") {
+        WorkItem.push(item);
+        res.redirect("/work");
+    } else {
+        items.push(item);
+        res.redirect('/')
+    };
 });
 
 app.get('/work', (req, res) => {
