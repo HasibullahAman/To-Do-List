@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     });
 });
 app.get('/about', (req, res) => {
-    req.render('about');
+    res.render('about');
 });
 app.post('/', (req, res) => {
     let item = req.body.newItem;
