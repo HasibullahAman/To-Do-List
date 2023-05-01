@@ -13,12 +13,12 @@ var today = new Date();
 var curentday = today.getDay();
 var day = "";
 app.get('/', (req, res) => {
-    var options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-    };
-    var day = today.toLocaleString('en-US', options);
+    // var options = {
+    //     weekday: 'long',
+    //     day: 'numeric',
+    //     month: 'long',
+    // };
+    // var day = today.toLocaleString('en-US', options);
     res.render('index', {
         ListTitle: day,
         NewItems: items,
