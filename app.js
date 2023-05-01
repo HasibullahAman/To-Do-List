@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     //     month: 'long',
     // };
     // var day = today.toLocaleString('en-US', options);
-    let day = date.getday();
+    let day = date.getdate();
     res.render('index', {
         ListTitle: day,
         NewItems: items,
