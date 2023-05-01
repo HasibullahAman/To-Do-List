@@ -1,26 +1,20 @@
+// --------------requier
+
 let express = require('express');
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
-// console.log(date());
 
+// -------------Veriable 
 let app = express();
 var items = [];
 var WorkItem = [];
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
-var today = new Date();
-var curentday = today.getDay();
-var day = "";
 app.get('/', (req, res) => {
-    // var options = {
-    //     weekday: 'long',
-    //     day: 'numeric',
-    //     month: 'long',
-    // };
-    // var day = today.toLocaleString('en-US', options);
     let day = date.getdate();
     res.render('index', {
         ListTitle: day,
@@ -53,9 +47,5 @@ app.post('/work', (req, res) => {
     WorkItem.push(item);
     res.redirect('/work');
 })
-
-
-
-
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
