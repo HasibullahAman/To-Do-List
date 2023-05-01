@@ -1,3 +1,6 @@
+// console.log(module);
+module.exports = "Hello World! ";
+
 function getdat() {
     var options = {
         weekday: 'long',
