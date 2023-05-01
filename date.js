@@ -1,7 +1,8 @@
 // console.log(module);
-module.exports = "Hello World! ";
+module.exports = getdat;
 
 function getdat() {
+    let today = new Date();
     var options = {
         weekday: 'long',
         day: 'numeric',
